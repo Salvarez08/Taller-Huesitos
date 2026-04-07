@@ -4,9 +4,9 @@ public class GameManager : MonoBehaviour
 {
     //declarar variables
     [SerializeField] private float _vidajugador = 100;
-    [SerializeField] private float _coinAmount = 0;
+    [SerializeField] private int _coinAmount = 0;
 
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] private Move move;
     [SerializeField] private UIManager uiManager;
 
     public void SumarVida(int cura)
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         }
         if (_vidajugador <= 0)
         {
-            Destroy(playerController.gameObject);
+            Destroy(move.gameObject);
         }
     }
 
@@ -55,6 +55,6 @@ public class GameManager : MonoBehaviour
     public void AddCoin(int coin)
     {
         _coinAmount += coin;
-        uiManager.UpdateCoinText(coin);
+        uiManager.UpdateCoinText(_coinAmount);
     }
 }
