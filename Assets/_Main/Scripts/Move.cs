@@ -29,6 +29,7 @@ public class Move : MonoBehaviour
         {
             heroMov();
             Jump();
+            //else dsp
         }
 
         checkForGround();
