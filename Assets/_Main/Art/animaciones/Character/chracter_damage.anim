@@ -101,7 +101,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.75
-    functionName: End_Damage
+    functionName: "Desactiva_da\xF1o"
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
