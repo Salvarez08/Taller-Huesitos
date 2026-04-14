@@ -576,7 +576,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.044894617, y: -0.032532014}
-  m_Size: {x: 1, y: 1.4}
+  m_Size: {x: 0.86826587, y: 1.2389698}
   m_Direction: 0
 --- !u!1 &880235699
 GameObject:
@@ -873,10 +873,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4846178837345573799, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8040855887872345893, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
     m_RemovedGameObjects: []
@@ -884,32 +880,8 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2667252334321282523, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1458847021}
-    - targetCorrespondingSourceObject: {fileID: 2667252334321282523, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 723641885}
   m_SourcePrefab: {fileID: 100100000, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
---- !u!50 &1458847020 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 4846178837345573799, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
-  m_PrefabInstance: {fileID: 1458847019}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1458847021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 723641881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7200d20b8c3203498310ff98ab74eb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerJump
-  rb: {fileID: 1458847020}
-  jumpForce: 10
-  maxJumps: 2
-  isGrounded: 0
 --- !u!1 &1521075100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,14 +1579,14 @@ RectTransform:
   m_GameObject: {fileID: 1981773546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.7674, y: 2.7674, z: 2.7674}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 371575537}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 657, y: 395}
+  m_AnchoredPosition: {x: 198, y: 109}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1981773548

@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        _barraDeVida.fillAmount = 1; 
+        //_barraDeVida.fillAmount = 1; 
     }
     public void ColorBarraDeVida(Color color)
     {
@@ -21,6 +21,6 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateCoinText(int coincounter)
     {
-        _coinText.text = "Coins: " + coincounter;
+        _coinText.text = "Huesitos: " + coincounter;
     }
 }

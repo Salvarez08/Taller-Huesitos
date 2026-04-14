@@ -6,7 +6,7 @@ public class Move : MonoBehaviour
     public float velPersonaje = 7f;
     public float fuerzaSalto = 7f;
     public Animator anim;
-    public BoxCollider2D MyCollider;
+    public CapsuleCollider2D MyCollider;
     public bool Damage;
 
     [Header("Ajustes de Gravedad")]
@@ -16,7 +16,7 @@ public class Move : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        MyCollider = GetComponent<BoxCollider2D>();
+        MyCollider = GetComponent<CapsuleCollider2D>();
 
         //pa q no ruede, esto me lo sque de twitter XDD
         rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -29,6 +29,7 @@ public class Move : MonoBehaviour
         {
             heroMov();
             Jump();
+            //else dsp
         }
 
         checkForGround();
@@ -96,12 +97,11 @@ public class Move : MonoBehaviour
 
         if (!Damage)
         {
-
             Damage = true;
-            Vector2 rebote = new Vector2(transform.position.x - direccion.x, 1).normalized;
+            Vector2 rebote = new Vector2(transform.position.x - direccion.x, 1).normalized *5f;
             rb2d.AddForce(rebote, ForceMode2D.Impulse);
 
-            Invoke("End_Damage", 0.5f);
+            Invoke("End_Damage", 0.8f);
         }
     }
 
