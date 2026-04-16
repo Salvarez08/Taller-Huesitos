@@ -9402,11 +9402,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 573344822}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &1337490395 stripped
-CapsuleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 9080758689352085575, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
-  m_PrefabInstance: {fileID: 1824763695}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1337490397 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2508659697783139425, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
@@ -9418,11 +9413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606f2cf2e8c530344bca0f12318dc5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!50 &1337490398 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 4846178837345573799, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
-  m_PrefabInstance: {fileID: 1824763695}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1427471870
 GameObject:
   m_ObjectHideFlags: 0
@@ -9991,18 +9981,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2508659697783139425, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
-      propertyPath: rb2d
-      value: 
-      objectReference: {fileID: 1337490398}
-    - target: {fileID: 2508659697783139425, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
-      propertyPath: Damage
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2508659697783139425, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
-      propertyPath: MyCollider
-      value: 
-      objectReference: {fileID: 1337490395}
     - target: {fileID: 2667252334321282523, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -10046,10 +10024,6 @@ PrefabInstance:
     - target: {fileID: 3040554627131871620, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6645698425704242728, guid: e60267aa9e21d5943b88f605f774e2d0, type: 3}
-      propertyPath: m_SortingOrder
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

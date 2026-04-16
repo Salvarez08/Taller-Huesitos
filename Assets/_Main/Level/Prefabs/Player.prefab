@@ -84,7 +84,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7495373321489435158, guid: 31e82f5eaa4e3b64082ddb3d16a637af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -157,12 +157,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606f2cf2e8c530344bca0f12318dc5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  rb2d: {fileID: 0}
+  rb2d: {fileID: 4846178837345573799}
   velPersonaje: 7
   fuerzaSalto: 7
   anim: {fileID: 5130190814058213774}
-  MyCollider: {fileID: 0}
+  MyCollider: {fileID: 9080758689352085575}
+  spriteRenderer: {fileID: 0}
   Damage: 0
+  isInvincible: 0
+  tiempoStun: 0.4
+  tiempoInvencibilidad: 1.5
   multiplicadorCaida: 2.5
 --- !u!114 &4413447766228237451
 MonoBehaviour:
