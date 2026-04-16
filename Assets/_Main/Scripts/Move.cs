@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Move : MonoBehaviour
 {
@@ -7,29 +8,34 @@ public class Move : MonoBehaviour
     public float fuerzaSalto = 7f;
     public Animator anim;
     public CapsuleCollider2D MyCollider;
+    public SpriteRenderer spriteRenderer;
+
     public bool Damage;
+    public bool isInvincible;
+
+    [Header("Ajustes de Daño")]
+    public float tiempoStun = 0.4f;
+    public float tiempoInvencibilidad = 1.5f;
 
     [Header("Ajustes de Gravedad")]
-    public float multiplicadorCaida = 3f; 
+    public float multiplicadorCaida = 3f;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         MyCollider = GetComponent<CapsuleCollider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
-        //pa q no ruede, esto me lo sque de twitter XDD
         rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     void Update()
     {
-        //se supone que esto haga un stun, lo dudo XD
         if (!Damage)
         {
             heroMov();
             Jump();
-            //else dsp
         }
 
         checkForGround();
@@ -57,31 +63,22 @@ public class Move : MonoBehaviour
     private void Jump()
     {
         bool tocandoSuelo = MyCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
-
-        
         anim.SetFloat("Jump_Velocity", rb2d.linearVelocity.y);
 
-     
         if (Input.GetButtonDown("Jump") && tocandoSuelo)
         {
-            
             rb2d.linearVelocity = new Vector2(rb2d.linearVelocity.x, fuerzaSalto);
         }
     }
 
     private void checkForGround()
     {
-        // suelo toca=true, no toca=false
         bool estaEnSuelo = MyCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
         anim.SetBool("Is_Grounded", estaEnSuelo);
     }
 
-
-    //esta parte me la ayudo a hacer un amigo, q perra webada fue esto.
-
     private void AjustarGravedad()
     {
-       
         if (rb2d.linearVelocity.y < 0)
         {
             rb2d.gravityScale = multiplicadorCaida;
@@ -94,20 +91,37 @@ public class Move : MonoBehaviour
 
     public void Take_Damage(Vector2 direccion, int cntDmg)
     {
-
-        if (!Damage)
+        if (!isInvincible)
         {
             Damage = true;
-            Vector2 rebote = new Vector2(transform.position.x - direccion.x, 1).normalized *5f;
+            isInvincible = true;
+
+            Vector2 rebote = new Vector2(transform.position.x - direccion.x, 1).normalized * 5f;
+            rb2d.linearVelocity = Vector2.zero;
             rb2d.AddForce(rebote, ForceMode2D.Impulse);
 
-            Invoke("End_Damage", 0.8f);
+            Invoke("End_Damage", tiempoStun);
+            StartCoroutine(InvincibilityRoutine());
         }
     }
 
     public void End_Damage()
     {
         Damage = false;
+    }
+
+    private IEnumerator InvincibilityRoutine()
+    {
+        float tiempoPasado = 0;
+        while (tiempoPasado < tiempoInvencibilidad)
+        {
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+            yield return new WaitForSeconds(0.1f);
+            tiempoPasado += 0.1f;
+        }
+
+        spriteRenderer.enabled = true;
+        isInvincible = false;
     }
 }
 
